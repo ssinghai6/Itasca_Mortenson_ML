@@ -4,13 +4,13 @@ The Repo consists of the Python Notebooks for Predicting the Velocity field and 
 ## Problem Statement
 The present problems consists of a domain with a strip loading. Based on the loading there is development of velocity fields. The aim is to predict the velocity field and depth of failure based on the input dat.
 ## Variables
-n_sim : no. of simulation
-n_x : discritization along x- direction
-n_y : discritization along y - direction
-velo : velocity at failure
-coh_data : cohesion
-fric_data : friction
-poly_data : poly
+n_sim : no. of simulation \\
+n_x : discritization along x- direction \\
+n_y : discritization along y - direction \\
+velo : velocity at failure \\
+coh_data : cohesion \\
+fric_data : friction \\
+poly_data : poly \\
 
 ### Approach 1
 Use of ANN to predict the velocity field at individual nodes. The domain is discritized into 25 nodes along the z direction and 33 nodes along the x direction.
