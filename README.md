@@ -12,7 +12,7 @@ coh_data : cohesion
 fric_data : friction
 poly_data : poly
 
-###Approach 1
+### Approach 1
 Use of ANN to predict the velocity field at individual nodes. The domain is discritized into 25 nodes along the z direction and 33 nodes along the x direction.
 #### Input data
 - 4ft_cohesion.numpy : consits of variation of cohesion along the z direction. [Dimension - (25,n_sim)]
