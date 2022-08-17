@@ -5,6 +5,7 @@ The Repo consists of the Python Notebooks for Predicting the Velocity field and 
 The present problems consists of a domain with a strip loading. Based on the loading there is development of velocity fields. The aim is to predict the velocity field and depth of failure based on the input dat.
 
 ## Approach 1: Considering Each node in the domain as a separate training case
+Files:  ann_Velocity_predict.ipynb; ann_velo_predict_final.ipynb; cnn_depth_fail_predict_final.ipynb; cnn_velocity_field_predict.ipynb
 ## Variables
 n_sim : no. of simulation  <br />
 n_x : discritization along x- direction  <br />
