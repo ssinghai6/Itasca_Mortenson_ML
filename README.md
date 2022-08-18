@@ -15,10 +15,25 @@ The final matrix is tranformed into a row having 49 columns (16- cohesion, 16- f
 - Ann_velo_fulldataset_maxnorm_V3.ipynb - The Jupyter notebook contains Final deep learning model with updated dataset. [Note: Download Input and Target in the current folder from share  file link]
 - Ann_velo_fulldataset_parametertuning.ipynb - The Jupyter notebook contains Fine tuning process for the model. [Note: Download Input and Target in the current folder from share file link]
 - Data_flask.ipynb - Extract a case file (X) for prediction in .npy format with dimension (33,) [Note: Important to have input file in the shape (33,) - Use np.squeeze(array_name) if array in dimesion (33,1)]
-- model_predcit.ipynb - The Jupyter notebook loads the model in .h5 format and scaler in pickle file (Note: Download ann_velo_deploy_norm_v3.h5 and scale_v3.pkl from the file shared link in the current folder) 
+- model_predcit.ipynb - The Jupyter notebook loads the model in .h5 format and scaler in pickle file (Note: Download ann_velo_v3.h5 and scale_v3.pkl from the file shared link in the current folder) 
 - model_predcit.py - Python file runs on direct execution [data_path will be the input file name - 'location/input.npy']
 
 ### Environment and Requirement
+-Setting up GPU for training
+1) Download Microsoft Visual Studio/ Anaconda
+2) Install the NVIDIA CUDA Toolkit (https://developer.nvidia.com/cuda-toolkit-archive)
+3) Now we’ll download NVIDIA cuDNN, (https://developer.nvidia.com/cudnn)
+4) Now, copy these 3 folders (bin, include, lib) from Extracted cuDNN. Go to C Drive>Program Files, and search for NVIDIA GPU Computing Toolkit.
+5) Open the folder, select CUDA > Version Name, and replace (paste) those copied files. 
+Now click on the bin folder and copy the path. It should look like this: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin. 
+6)On your PC, search for Environment variables : Click on Environment Variables on the bottom left. Now click on the link which states PATH.
+7) Now click on New (Top Left), and paste the bin path here. Go to the CUDA folder, select libnvvm folder, and copy its path and restart the PC.
+8) Open conda prompt (Commands):
+- conda create -n tensorflow-gpu python (Hit “Y” when asked)
+- activate tensorflow-gpu
+- pip install tensorflow-gpu
+- pip install keras-tuner
+- pip install tensorflow_addon
 
 
 ## Approach 2: Considering Each node in the domain as a separate training case
