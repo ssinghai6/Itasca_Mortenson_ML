@@ -34,6 +34,8 @@ Now click on the bin folder and copy the path. It should look like this: C:\Prog
 - pip install tensorflow-gpu
 - pip install keras-tuner
 - pip install tensorflow_addon
+- pip install matplotlib
+- pip install scikit-learn
 
 
 ## Approach 2: Considering Each node in the domain as a separate training case
