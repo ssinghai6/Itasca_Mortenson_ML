@@ -2,9 +2,26 @@
 The Repo consists of the Python Notebooks for Predicting the Velocity field and depth of failure using Neural Network
 
 ## Problem Statement
-The present problems consists of a domain with a strip loading. Based on the loading there is development of velocity fields. The aim is to predict the velocity field and depth of failure based on the input dat.
+The present problems consists of a domain with a strip loading. Based on the loading there is development of velocity fields. The aim is to predict the velocity field and depth of failure based on the input data.
 
-## Approach 1: Considering Each node in the domain as a separate training case
+## Approach 1: Considering whole domain as a training example
+This approach is used on new updated dataset, where in only the variation along z direction (16 nodes) are taken into the consideration.
+Each layer property is consider as a separate feature for training. For example: There are 16 layers with varying cohesion, friction and Poly and constant watertable.
+The final matrix is tranformed into a row having 49 columns (16- cohesion, 16- friction, 16- poly, 1- watertable)
+
+### Location: Itasca_Mortenson_ML/Velocity_predict/ann_velocity/
+### ShareFile Link: https://itasca.sharefile.com/home/shared/fod154d2-9d52-451a-af67-fa8467f73e1e
+### Files: 
+- Ann_velo_fulldataset_maxnorm_V3.ipynb - The Jupyter notebook contains Final deep learning model with updated dataset. [Note: Download Input and Target in the current folder from share  file link]
+- Ann_velo_fulldataset_parametertuning.ipynb - The Jupyter notebook contains Fine tuning process for the model. [Note: Download Input and Target in the current folder from share file link]
+- Data_flask.ipynb - Extract a case file (X) for prediction in .npy format with dimension (33,) [Note: Important to have input file in the shape (33,) - Use np.squeeze(array_name) if array in dimesion (33,1)]
+- model_predcit.ipynb - The Jupyter notebook loads the model in .h5 format and scaler in pickle file (Note: Download ann_velo_deploy_norm_v3.h5 and scale_v3.pkl from the file shared link in the current folder) 
+- model_predcit.py - Python file runs on direct execution [data_path will be the input file name - 'location/input.npy']
+
+### Environment and Requirement
+
+
+## Approach 2: Considering Each node in the domain as a separate training case
 Files:  ann_Velocity_predict.ipynb; ann_velo_predict_final.ipynb; cnn_depth_fail_predict_final.ipynb; cnn_velocity_field_predict.ipynb
 ## Variables
 n_sim : no. of simulation  <br />
@@ -57,19 +74,3 @@ NaN.
 #### Final Outcome
 - The model works fine in predicting depth of failure.
 - It can be made more accurate by adding more kernels and batch normalization.
-
-## Approach 2: Considering whole domain as a training example
-This approach is used on new updated dataset, where in only the variation along z direction (16 nodes) are taken into the consideration.
-Each layer property is consider as a separate feature for training. For example: There are 16 layers with varying cohesion, friction and Poly and constant watertable.
-The final matrix is tranformed into a row having 49 columns (16- cohesion, 16- friction, 16- poly, 1- watertable)
-
-### Location: Itasca_Mortenson_ML/Velocity_predict/ann_velocity/
-### ShareFile Link: https://itasca.sharefile.com/home/shared/fod154d2-9d52-451a-af67-fa8467f73e1e
-### Files: 
-- Ann_velo_fulldataset_maxnorm_V3.ipynb - The Jupyter notebook contains Final deep learning model with updated dataset. [Note: Download Input and Target in the current folder from share  file link]
-- Ann_velo_fulldataset_parametertuning.ipynb - The Jupyter notebook contains Fine tuning process for the model. [Note: Download Input and Target in the current folder from share file link]
-- Data_flask.ipynb - Extract a case file (X) for prediction in .npy format with dimension (33,) [Note: Important to have input file in the shape (33,) - Use np.squeeze(array_name) if array in dimesion (33,1)]
-- model_predcit.ipynb - The Jupyter notebook loads the model in .h5 format and scaler in pickle file (Note: Download ann_velo_deploy_norm_v3.h5 and scale_v3.pkl from the file shared link in the current folder) 
-- model_predcit.py - Python file runs on direct execution [data_path will be the input file name - 'location/input.npy']
-
-### Environment and Requirement
