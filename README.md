@@ -63,9 +63,9 @@ This approach is used on new updated dataset, where in only the variation along 
 Each layer property is consider as a separate feature for training. For example: There are 16 layers with varying cohesion, friction and Poly and constant watertable.
 The final matrix is tranformed into a row having 49 columns (16- cohesion, 16- friction, 16- poly, 1- watertable)
 
-###Location: Itasca_Mortenson_ML/Velocity_predict/ann_velocity/
-###ShareFile Link: https://itasca.sharefile.com/home/shared/fod154d2-9d52-451a-af67-fa8467f73e1e
-###Files: 
+### Location: Itasca_Mortenson_ML/Velocity_predict/ann_velocity/
+### ShareFile Link: https://itasca.sharefile.com/home/shared/fod154d2-9d52-451a-af67-fa8467f73e1e
+### Files: 
 - Ann_velo_fulldataset_maxnorm_V3.ipynb - The Jupyter notebook contains Final deep learning model with updated dataset. [Note: Download Input and Target in the current folder from share  file link]
 - Ann_velo_fulldataset_parametertuning.ipynb - The Jupyter notebook contains Fine tuning process for the model. [Note: Download Input and Target in the current folder from share file link]
 - Data_flask.ipynb - Extract a case file (X) for prediction in .npy format with dimension (33,) [Note: Important to have input file in the shape (33,) - Use np.squeeze(array_name) if array in dimesion (33,1)]
