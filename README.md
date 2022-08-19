@@ -37,7 +37,7 @@ Now click on the bin folder and copy the path. It should look like this: C:\Prog
 - pip install matplotlib
 - pip install scikit-learn
 - pip install tensorflowjs
-
+- jupyter notebook
 
 ## Approach 2: Considering Each node in the domain as a separate training case
 Files:  ann_Velocity_predict.ipynb; ann_velo_predict_final.ipynb; cnn_depth_fail_predict_final.ipynb; cnn_velocity_field_predict.ipynb
