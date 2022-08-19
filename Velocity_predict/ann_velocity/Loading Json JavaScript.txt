@@ -1,0 +1,19 @@
+<head>
+  <script>
+    async function loadModel() {
+      model = undefined;
+      model = await tf.loadLayersModel("https://github.com/ssinghai6/Itasca_Mortenson_ML/blob/main/Velocity_predict/ann_velocity/ann_velo/model.json");
+      console.log("model loaded")
+    }
+    loadModel();
+
+    function make_prediction() {
+      var a, output;
+      input_xs = tf.tensor2d([
+        [a]);
+      output = model.predict(input_xs);
+      const outputData = output.dataSync();
+      document.getElementById("answer").value = Number(outputData[0] > 0.5);
+    }
+  </script>
+</head>
